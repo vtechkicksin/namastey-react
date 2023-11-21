@@ -1,11 +1,10 @@
+import { LOGO_URL } from "../../utils/constants";
+
 const Headers = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img
-          className="logo"
-          src="https://icon-library.com/images/food-app-icon/food-app-icon-13.jpg"
-        />
+        <img className="logo" src={LOGO_URL} />
       </div>
       <div className="nav-items">
         <ul>
@@ -18,3 +17,5 @@ const Headers = () => {
     </div>
   );
 };
+
+export default Headers;
