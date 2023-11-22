@@ -33,6 +33,7 @@ Headers
 
 const Body = () => {
 return (
+
 <div className="body">
 <div className="search">Search</div>
 <div className="restaurant-container">
@@ -43,3 +44,23 @@ return (
 </div>
 );
 };
+
+Two types of Export/import
+
+- Default Export/Import
+
+export default Component;
+import Component from "path";
+
+- Named Export/Import
+
+
+export const Component;
+import { Component } from "path"
+
+
+# React hooks
+
+(Normal JS utility functions)
+- useState() - SuperPowerfull State Variable in react 
+- useEffect()
