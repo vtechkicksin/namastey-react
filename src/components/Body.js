@@ -1,11 +1,25 @@
 import RestaurantCard from "./Restaurant";
-import resObj from "../../utils/test";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Body = () => {
   // Local State Variable - super powerful variable
-  const [listOfRestaurant, setListOfRestaurant] = useState(resObj);
+  const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.931458241130928&lng=77.6299859583378&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    setListOfRestaurant(
+      json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
+    );
+    console.log(
+      json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
+    );
+  };
   return (
     <div className="body">
       <div className="filter">
