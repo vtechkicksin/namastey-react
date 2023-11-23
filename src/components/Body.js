@@ -5,8 +5,11 @@ import { useState, useEffect } from "react";
 const Body = () => {
   // Local State Variable - super powerful variable
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
+
   const [searchText, setSearchtext] = useState("");
 
+  console.log("listOfRestaurant>>>", listOfRestaurant);
   useEffect(() => {
     fetchData();
   }, []);
@@ -18,6 +21,9 @@ const Body = () => {
 
     // .? is called optional chaining
     setListOfRestaurant(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredList(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
@@ -44,7 +50,7 @@ const Body = () => {
               const filteredRestaurant = listOfRestaurant.filter((e) =>
                 e.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
-              setListOfRestaurant(filteredRestaurant);
+              setFilteredList(filteredRestaurant);
             }}
           >
             search
@@ -53,17 +59,17 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = listOfRestaurant.filter(
+            const filteredListRestaurant = listOfRestaurant.filter(
               (e) => e.info.avgRating >= 4.2
             );
-            setListOfRestaurant(filteredList);
+            setFilteredList(filteredListRestaurant);
           }}
         >
           Top Rated Restaurants
         </button>
       </div>
       <div className="restaurant-container">
-        {listOfRestaurant.map((e) => (
+        {filteredList.map((e) => (
           <RestaurantCard key={e.info.id} resData={e} />
         ))}
       </div>
