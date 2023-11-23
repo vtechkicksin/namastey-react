@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const Body = () => {
   // Local State Variable - super powerful variable
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
+  const [searchText, setSearchtext] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -14,21 +15,41 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.931458241130928&lng=77.6299859583378&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+
+    // .? is called optional chaining
     setListOfRestaurant(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    console.log(
-      json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
-    );
   };
 
+  // conditional rendering
   if (listOfRestaurant.length === 0) {
     return <Shimmer />;
   }
-
+  console.log("body re-render");
   return (
     <div className="body">
-      <div className="filter">
+      <div className="filter" style={{ display: "flex" }}>
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchtext(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              const filteredRestaurant = listOfRestaurant.filter((e) =>
+                e.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setListOfRestaurant(filteredRestaurant);
+            }}
+          >
+            search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
