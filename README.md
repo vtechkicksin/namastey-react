@@ -78,13 +78,4 @@ This behaives very differently when we not pass dependency array.
 2. Server side Routing
 
 # example
-Client-Side Routing:
 
-What it is: Imagine your web browser as a smart tour guide. With client-side routing, the guide (your browser) has a map (your app) and can show you different places (pages) without asking the headquarters (server) for directions each time.
-How it works: When you click on a link or type a new address, the browser cleverly loads the destination page without reloading the entire guidebook (the entire webpage).
-Advantages: It feels faster because you get updates without waiting for the guide to call the headquarters each time. It's like flipping through pages in a book rather than asking someone to read each page to you.
-Server-Side Routing:
-
-What it is: Now, imagine a traditional library. You ask the librarian (server) for a book (page), and they hand it to you. If you want a different book, you ask again, and the librarian hands you a new one.
-How it works: When you click a link, your browser asks the server for the new page. The server then sends the entire page back to your browser, replacing the current one. It's like getting a new book every time you want to read something different.
-Advantages: The server has complete control over what you see, ensuring you always get the latest and most accurate information. It's like having a librarian who knows everything and can give you the most updated books.
