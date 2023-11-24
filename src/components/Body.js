@@ -9,7 +9,6 @@ const Body = () => {
 
   const [searchText, setSearchtext] = useState("");
 
-  console.log("listOfRestaurant>>>", listOfRestaurant);
   useEffect(() => {
     fetchData();
   }, []);
@@ -29,11 +28,12 @@ const Body = () => {
   };
 
   // conditional rendering
-  if (listOfRestaurant.length === 0) {
-    return <Shimmer />;
-  }
-  console.log("body re-render");
-  return (
+  // if (listOfRestaurant.length === 0) {
+  //   return <Shimmer />;
+  // }
+  return listOfRestaurant.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter" style={{ display: "flex" }}>
         <div className="search">
