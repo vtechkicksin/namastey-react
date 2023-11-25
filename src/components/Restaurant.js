@@ -1,6 +1,8 @@
 import { CDN_URL } from "../../utils/constants";
-
+import { Link } from "react-router-dom";
+import { useState } from "react";
 const RestaurantCard = (props) => {
+  // console.log(props.resData.info.feeDetails.restaurantId)
   return (
     <div
       className="res-card"
