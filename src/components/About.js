@@ -27,18 +27,18 @@ class About extends Component {
   }
 }
 /**
- * parent constructor
- * About.js:15 parent render
- * UserClass.js:10 first child constructor
- * UserClass.js:16 first child render
- * UserClass.js:10 second child constructor
- * UserClass.js:16 second child render
- * UserFunc.js:10 Render third function Component
- * UserFunc.js:10 Render fourth function Component
- * UserClass.js:13 first child componentDidMount
- * UserClass.js:13 second child componentDidMount
- * About.js:12 parent componentDidMount
- * UserFunc.js:7 useEffect call third componentDidMount
- * UserFunc.js:7 useEffect call fourth componentDidMount
+ * About.js:15         |  parent constructor
+ * About.js:15         |  parent render
+ * UserClass.js:10     |  first child constructor
+ * UserClass.js:16     |  first child render
+ * UserClass.js:10     |  second child constructor
+ * UserClass.js:16     |  second child render
+ * UserFunc.js:10      |  Render third function Component
+ * UserFunc.js:10      |  Render fourth function Component
+ * UserClass.js:13     |  first child componentDidMount
+ * UserClass.js:13     |  second child componentDidMount
+ * About.js:12         |  parent componentDidMount
+ * UserFunc.js:7       |  useEffect call third componentDidMount
+ * UserFunc.js:7       |  useEffect call fourth componentDidMount
  */
 export default About;
