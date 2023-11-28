@@ -23,7 +23,7 @@ const Headers = () => {
             <Link to="/about">Abount us</Link>
           </li>
           <li>
-            <Link to="/Contact">Contact us</Link>
+            <Link to="/ContactUs">Contact us</Link>
           </li>
           <li>Cart</li>
           <button
