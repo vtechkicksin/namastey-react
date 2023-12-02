@@ -2,7 +2,7 @@ import RestaurantCard from "./Restaurant";
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import useOnlineStatus from "../../utils/useOnlineStatus";
 const Body = () => {
   // Local State Variable - super powerful variable
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -28,10 +28,11 @@ const Body = () => {
     );
   };
 
-  // conditional rendering
-  // if (listOfRestaurant.length === 0) {
-  //   return <Shimmer />;
-  // }
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false)
+    return <h1>Please check your internet connection</h1>;
+    
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
