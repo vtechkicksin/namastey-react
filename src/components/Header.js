@@ -13,7 +13,7 @@ const Headers = () => {
   const onlineStatus = useOnlineStatus();
   return (
     <div className="flex justify-between bg-pink-100 drop-shadow-xl">
-      <div className="logo-container">
+      <div className="logo-container px-4">
         <img className="w-[100px] h-[100px]" src={LOGO_URL} />
       </div>
       <div className="flex items-center">

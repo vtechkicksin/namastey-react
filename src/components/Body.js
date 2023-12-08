@@ -21,13 +21,12 @@ const Body = () => {
 
     // .? is called optional chaining
     setListOfRestaurant(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredList(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false)
@@ -37,7 +36,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter flex">
+      <div className="filter flex justify-center">
         <div className="search m-4 p-4">
           <input
             type="text"
@@ -73,7 +72,8 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-center">
+        {console.log("filteredList ", filteredList)}
         {filteredList.map((e) => (
           <Link key={e.info.id} to={"/restaurants/" + e.info.id}>
             <RestaurantCard resData={e} />
