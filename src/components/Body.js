@@ -32,22 +32,23 @@ const Body = () => {
 
   if (onlineStatus === false)
     return <h1>Please check your internet connection</h1>;
-    
+
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter" style={{ display: "flex" }}>
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setSearchtext(e.target.value);
             }}
           />
           <button
+            className="mx-4 px-4 py-2 bg-green-100 rounded-lg"
             onClick={() => {
               const filteredRestaurant = listOfRestaurant.filter((e) =>
                 e.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -58,19 +59,21 @@ const Body = () => {
             search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredListRestaurant = listOfRestaurant.filter(
-              (e) => e.info.avgRating >= 4.2
-            );
-            setFilteredList(filteredListRestaurant);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="search m-4 p-4 flex items-center">
+          <button
+            className="px-4 py-2 bg-gray-200 rounded-lg"
+            onClick={() => {
+              const filteredListRestaurant = listOfRestaurant.filter(
+                (e) => e.info.avgRating >= 4.2
+              );
+              setFilteredList(filteredListRestaurant);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="restaurant-container">
+      <div className="restaurant-container flex flex-wrap">
         {filteredList.map((e) => (
           <Link key={e.info.id} to={"/restaurants/" + e.info.id}>
             <RestaurantCard resData={e} />

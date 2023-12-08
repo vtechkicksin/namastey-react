@@ -5,14 +5,14 @@ const RestaurantCard = (props) => {
   // console.log(props.resData.info.feeDetails.restaurantId)
   return (
     <div
-      className="res-card"
-      style={{
-        backgroundColor: "#f0f0f0",
-      }}
+      className="m-4 p-4 w-[250]"
+      // style={{
+      //   backgroundColor: "#f0f0f0",
+      // }}
     >
       <img
         alt=""
-        className="res-logo"
+        className="res-logo w-[300] h-[250]"
         src={CDN_URL + props.resData.info.cloudinaryImageId}
       />
       <h3>{props.resData.info.name}</h3>
