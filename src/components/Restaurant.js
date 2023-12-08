@@ -4,18 +4,13 @@ import { useState } from "react";
 const RestaurantCard = (props) => {
   // console.log(props.resData.info.feeDetails.restaurantId)
   return (
-    <div
-      className="m-4 p-4 w-[250]"
-      // style={{
-      //   backgroundColor: "#f0f0f0",
-      // }}
-    >
+    <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-300">
       <img
         alt=""
-        className="res-logo w-[300] h-[250]"
+        className="rounded-lg w-[250px] h-[250px]"
         src={CDN_URL + props.resData.info.cloudinaryImageId}
       />
-      <h3>{props.resData.info.name}</h3>
+      <h3 className="font-bold py-4 text-lg">{props.resData.info.name}</h3>
       <h4>{props.resData.cuisines}</h4>
       <h4>{props.resData.info.costForTwo}</h4>
       <h4>{props.resData.info.avgRating}stars</h4>
