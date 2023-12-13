@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 const Body = () => {
   // Local State Variable - super powerful variable
-  const [listOfRestaurant, setListOfRestaurant] = useState([]);
+  const [listOfRestaurant, setListOfRestaurant] = useState(null);
   const [filteredList, setFilteredList] = useState([]);
 
   const [searchText, setSearchtext] = useState("");
@@ -15,7 +15,7 @@ const Body = () => {
   }, []);
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.93145824113092&lng=77.629985958337&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
 
@@ -26,13 +26,14 @@ const Body = () => {
     setFilteredList(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    console.log("checking promoted", json?.data?.cards[2]?.card?.card);
   };
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false)
     return <h1>Please check your internet connection</h1>;
 
-  return listOfRestaurant.length === 0 ? (
+  return listOfRestaurant === null ? (
     <Shimmer />
   ) : (
     <div className="body">
