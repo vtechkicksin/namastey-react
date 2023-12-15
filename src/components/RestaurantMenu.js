@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { MENU_API } from "../../utils/constants";
@@ -7,13 +7,12 @@ import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-
+  const [showindex, setShowIndex] = useState(null);
   const resInfo = useRestaurantMenu(resId);
-  console.log("restaurant ", resInfo);
+
   if (resInfo.length === 0) {
     return <Shimmer />;
   }
-
   const { name, cuisines, costForTwoMessage } =
     resInfo?.data?.cards[0]?.card?.card?.info;
   const { itemCards } =
@@ -39,21 +38,14 @@ const RestaurantMenu = () => {
       <p className="font-bold">
         {cuisines.join(", ")} - {costForTwoMessage}
       </p>
-      {categories.map((categories) => (
-        <RestaurantCategory data={categories?.card?.card} />
+      {categories.map((categories, index) => (
+        <RestaurantCategory
+          key={categories.card.card.title}
+          data={categories?.card?.card}
+          showItem={index === showindex ? true : false}
+          setShowIndex={() => setShowIndex(index)}
+        />
       ))}
-      {/* <h2>Menu</h2>
-      <ul>
-        {itemCards.map((item) => {
-          return (
-            <li key={item.card?.info?.id}>
-              {item.card?.info?.name} -{"Rs. "}{" "}
-              {item.card?.info?.price / 100 ||
-                item.card?.info?.defaultPrice / 100}
-            </li>
-          );
-        })}
-      </ul> */}
     </div>
   );
 };
