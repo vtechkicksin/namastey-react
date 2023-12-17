@@ -77,5 +77,11 @@ This behaives very differently when we not pass dependency array.
 1. Client side Routing
 2. Server side Routing
 
-# example
+# Redux Toolkit
+  - Install @reduxjs/toolkit and react-redux
+  - Build our store
+  - Connect our store to our app
+  - Slice (CartSlice)
+  - dispatch(action)
+  - Selector
 

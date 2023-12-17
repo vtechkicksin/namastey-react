@@ -2,6 +2,7 @@ import { LOGO_URL } from "../../utils/constants";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const Headers = () => {
   const [btnName, setBtnName] = useState("login");
@@ -11,6 +12,10 @@ const Headers = () => {
   // if dependency arrr is [arr] means, we have put something inside dependency array then it is called eveyTime arr is updated
   useEffect(() => {});
   const onlineStatus = useOnlineStatus();
+
+  // subscribing to the store using our selector
+  const cartItems = useSelector((store) => store.cart.items);
+
   return (
     <div className="flex justify-between bg-pink-100 drop-shadow-xl">
       <div className="logo-container px-4">
@@ -28,7 +33,7 @@ const Headers = () => {
           <li className="px-4">
             <Link to="/ContactUs">Contact us</Link>
           </li>
-          <li className="px-4">Cart</li>
+          <li className="px-4 font-bold text-lg">Cart ({cartItems.length})</li>
           <button
             className="login"
             onClick={() => {
