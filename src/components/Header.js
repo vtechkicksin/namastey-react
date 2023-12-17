@@ -35,7 +35,7 @@ const Headers = () => {
             <Link to="/ContactUs">Contact us</Link>
           </li>
           <li className="px-4 font-bold text-lg">
-            <Link to="/Cart">Cart ({cartItems.length})</Link>
+            <Link to="/Cart">Cart - ({cartItems.length} item)</Link>
           </li>
           <button
             className="login"

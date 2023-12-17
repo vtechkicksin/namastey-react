@@ -36,8 +36,8 @@ const Body = () => {
   return listOfRestaurant === null ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter flex justify-center">
+    <div className="body bg-gray-700">
+      <div className="filter flex justify-center w-10/12 bg-gray-100 m-auto">
         <div className="search m-4 p-4">
           <input
             type="text"
@@ -64,7 +64,7 @@ const Body = () => {
             className="px-4 py-2 bg-gray-200 rounded-lg"
             onClick={() => {
               const filteredListRestaurant = listOfRestaurant.filter(
-                (e) => e.info.avgRating >= 4.2
+                (e) => e.info.avgRating >= 4.1
               );
               setFilteredList(filteredListRestaurant);
             }}
@@ -73,7 +73,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center w-10/12 m-auto bg-gray-300">
         {console.log("filteredList ", filteredList)}
         {filteredList.map((e) => (
           <Link key={e.info.id} to={"/restaurants/" + e.info.id}>
