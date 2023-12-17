@@ -3,10 +3,10 @@ import { addItem } from "../../utils/cartSlice";
 import { CDN_URL } from "../../utils/constants";
 
 const ItemList = ({ item }) => {
-  const dispatch = useDispatch;
-  const handleAddItem = () => {
+  const dispatch = useDispatch();
+  const handleAddItem = (items) => {
     // dispatch an action
-    dispatch(addItem("pizza"));
+    dispatch(addItem(items));
   };
   return (
     <div>
@@ -28,7 +28,7 @@ const ItemList = ({ item }) => {
             <div className="absolute">
               <button
                 className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg "
-                onClick={handleAddItem}
+                onClick={() => handleAddItem(e)}
               >
                 Add
               </button>
