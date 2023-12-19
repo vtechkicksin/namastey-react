@@ -36,7 +36,7 @@ const Body = () => {
   return listOfRestaurant === null ? (
     <Shimmer />
   ) : (
-    <div className="body bg-gray-700">
+    <div className="body">
       <div className="filter flex justify-center w-10/12 bg-gray-100 m-auto">
         <div className="search m-4 p-4">
           <input
