@@ -78,10 +78,24 @@ This behaives very differently when we not pass dependency array.
 2. Server side Routing
 
 # Redux Toolkit
-  - Install @reduxjs/toolkit and react-redux
-  - Build our store
-  - Connect our store to our app
-  - Slice (CartSlice)
-  - dispatch(action)
-  - Selector
 
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app
+- Slice (CartSlice)
+- dispatch(action)
+- Selector
+
+# Types of testing (developer)
+
+- Unit testing - Testing component in isolation
+- Integration testing
+- End-To-End Testing
+
+# Setting up testing in our app
+
+- Install React Testing Library
+- Installed jest (jest docs)
+- Installed babel dependency (jest docs)
+- configure babel by creating babel.confif.js and configure
+- Configure Parcel config file to disable the default babel transpilation
