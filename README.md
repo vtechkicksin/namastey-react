@@ -99,3 +99,5 @@ This behaives very differently when we not pass dependency array.
 - Installed babel dependency (jest docs)
 - configure babel by creating babel.confif.js and configure
 - Configure Parcel config file to disable the default babel transpilation
+- Jest -npx jest --init
+- Install js DOM library
