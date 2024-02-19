@@ -19,6 +19,7 @@ const Body = () => {
     );
     const json = await data.json();
 
+    console.log("data", json);
     // .? is called optional chaining
     setListOfRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -41,6 +42,7 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
+            data-testid="searchInput"
             className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
@@ -74,7 +76,6 @@ const Body = () => {
         </div>
       </div>
       <div className="flex flex-wrap justify-center w-10/12 m-auto bg-gray-300">
-        {console.log("filteredList ", filteredList)}
         {filteredList.map((e) => (
           <Link key={e.info.id} to={"/restaurants/" + e.info.id}>
             <RestaurantCard resData={e} />

@@ -1,0 +1,86 @@
+{
+  "info": {
+    "id": "293023",
+    "name": "Istah - The Mediterranean Way",
+    "cloudinaryImageId": "9a01f2935fcb5ae05426db8264062102",
+    "locality": "6th Block",
+    "areaName": "Koramangala",
+    "costForTwo": "₹250 for two",
+    "cuisines": [
+      "Mediterranean",
+      "Snacks",
+      "Biryani",
+      "Grill",
+      "Kebabs",
+      "Arabian",
+      "Lebanese",
+      "Beverages",
+      "Desserts",
+      "Italian",
+      "Turkish"
+    ],
+    "avgRating": 4.5,
+    "parentId": "3518",
+    "avgRatingString": "4.5",
+    "totalRatingsString": "10K+",
+    "sla": {
+      "deliveryTime": 22,
+      "lastMileTravel": 0.7,
+      "serviceability": "SERVICEABLE",
+      "slaString": "22 mins",
+      "lastMileTravelString": "0.7 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2024-01-02 02:00:00",
+      "opened": true
+    },
+    "badges": {
+      "imageBadges": [
+        {
+          "imageId": "v1690360529/Ratnesh_Badges/Only_on_swiggy_badge_4x.png",
+          "description": "OnlyOnSwiggy"
+        }
+      ]
+    },
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {
+          "badgeObject": [
+            {
+              "attributes": {
+                "description": "OnlyOnSwiggy",
+                "imageId": "v1690360529/Ratnesh_Badges/Only_on_swiggy_badge_4x.png"
+              }
+            }
+          ]
+        },
+        "textBased": {},
+        "textExtendedBadges": {}
+      }
+    },
+    "aggregatedDiscountInfoV3": {
+      "header": "₹120 OFF",
+      "subHeader": "ABOVE ₹199",
+      "discountTag": "FLAT DEAL"
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {}
+  },
+  "analytics": {},
+  "cta": {
+    "link": "https://www.swiggy.com/restaurants/istah-the-mediterranean-way-6th-block-koramangala-bangalore-293023",
+    "type": "WEBLINK"
+  }
+}

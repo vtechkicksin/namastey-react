@@ -5,6 +5,9 @@
 
 /** @type {import('jest').Config} */
 const config = {
+  jest: {
+    setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 

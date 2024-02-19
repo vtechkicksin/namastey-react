@@ -2,6 +2,8 @@
 
 # namastey-react
 
+# No create-react-app - all the configurations are from the scratch 
+
 # Structure
 
 Headers
@@ -103,3 +105,12 @@ This behaives very differently when we not pass dependency array.
 - Configure Parcel config file to disable the default babel transpilation
 - Jest -npx jest --init
 - Install js DOM library
+- Install @babel/preset-react - to make jsx work in test cases
+- Include @babel/preset-react inside my babel config
+
+  module.exports = {
+  presets: [
+  ["@babel/preset-env", { targets: { node: "current" } }],
+  ["@babel/preset-react", { runtime: "automatic" }],
+  ],
+  };
