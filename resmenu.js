@@ -23655,6 +23655,6 @@ const resData = {
   csrfToken: "tEfsyqRQ7th3-NxC4bpVOiasNCn6Vr_lyyZmJ6Pk",
 };
 
-console.log(resData.data.cards[0]);
+
 //   const { name, cuisines, costForTwoMessage } =
 //   resData.cards[0].card.card.info;

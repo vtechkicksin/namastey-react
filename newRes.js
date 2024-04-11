@@ -14194,4 +14194,3 @@ const Name = itemCards.map((item) => {
   return item.card?.info?.name;
 });
 
-console.log("name>>>", Name);

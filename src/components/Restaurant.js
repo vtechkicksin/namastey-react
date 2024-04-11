@@ -2,7 +2,6 @@ import { CDN_URL } from "../../utils/constants";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 const RestaurantCard = (props) => {
-  // console.log(props.resData.info.feeDetails.restaurantId)
   return (
     <div data-testid="resCard" className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-300">
       <img

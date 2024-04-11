@@ -19,7 +19,7 @@ const Body = () => {
     );
     const json = await data.json();
 
-    console.log("data", json);
+    
     // .? is called optional chaining
     setListOfRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -27,7 +27,6 @@ const Body = () => {
     setFilteredList(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    console.log("checking promoted", json?.data?.cards[2]?.card?.card);
   };
   const onlineStatus = useOnlineStatus();
 

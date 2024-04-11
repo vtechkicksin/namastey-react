@@ -1,5 +1,4 @@
 const User = (props) => {
-  console.log("props>>>>>>", props);
   return (
     <div className="user-card">
       <h2>Name: {props.name}</h2>

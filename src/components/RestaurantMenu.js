@@ -13,7 +13,6 @@ const RestaurantMenu = () => {
   if (resInfo.length === 0) {
     return <Shimmer />;
   }
-  console.log("scorpio n>>>>>>>>",resInfo?.data?.cards[2]?.card?.card?.info)
   const { name, cuisines, costForTwoMessage } =
     resInfo?.data?.cards[2]?.card?.card?.info;
   const { itemCards } =
@@ -32,7 +31,7 @@ const RestaurantMenu = () => {
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-  console.log("categories>>>>>", categories);
+
   return (
     <div className="text-center ">
       <h1 className="font-bold m-10 text-2xl">{name}</h1>
